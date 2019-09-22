@@ -5,34 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cf08841-dd23-421b-ba5f-16105b6812e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gmail/itchyscratchy159/services/CommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__Add_admin.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/693c741f-e9fe-4380-9621-4181a9d64341.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7e5f3c18-6195-45be-9afb-632ce26c51eb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7e5f3c18-6195-45be-9afb-632ce26c51eb.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7e5f3c18-6195-45be-9afb-632ce26c51eb/storage_v2/_src_/database/KickStarter.SUvYhA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7e5f3c18-6195-45be-9afb-632ce26c51eb/storage_v2/_src_/database/KickStarter.SUvYhA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/itchyscratchy159/controllers/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/itchyscratchy159/controllers/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/itchyscratchy159/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/itchyscratchy159/controllers/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/itchyscratchy159/controllers/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/itchyscratchy159/controllers/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/itchyscratchy159/services/MailSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/itchyscratchy159/services/MailSenderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gmail/itchyscratchy159/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gmail/itchyscratchy159/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/login.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/navbar.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/navbar.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/startup.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/startup.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/itchyscratchy159/controllers/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/itchyscratchy159/controllers/CommentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/itchyscratchy159/controllers/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/itchyscratchy159/controllers/RegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/itchyscratchy159/controllers/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/itchyscratchy159/controllers/RoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/itchyscratchy159/services/MailSender.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gmail/itchyscratchy159/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gmail/itchyscratchy159/services/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/parts/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/parts/login.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/parts/navbar.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/parts/navbar.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/startup.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/startup.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/04893c68-85ce-47b0-b951-51b812866701.Jay-Bob-main (1).jpg" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -419,7 +392,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569168096102" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569168165965" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -500,12 +473,20 @@
       <workItem from="1568919439687" duration="3036000" />
       <workItem from="1568971760681" duration="17462000" />
       <workItem from="1569092247925" duration="3552000" />
-      <workItem from="1569151912836" duration="12631000" />
+      <workItem from="1569151912836" duration="12712000" />
     </task>
+    <task id="LOCAL-00001" summary="Third commit">
+      <created>1569168163746</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569168163746</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159374000" />
+    <option name="totallyTimeSpent" value="159455000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -518,6 +499,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4968153" visible="true" weight="0.17590618" />
       <window_info id="Structure" order="1" sideWeight="0.50318474" side_tool="true" weight="0.12686567" />
@@ -529,7 +511,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.33152762" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.3726977" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.3726977" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.37594798" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -557,6 +539,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Third commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third commit" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
