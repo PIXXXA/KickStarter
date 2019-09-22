@@ -1,15 +1,15 @@
 package com.gmail.itchyscratchy159.controllers;
 
-        import com.gmail.itchyscratchy159.entities.User;
-        import com.gmail.itchyscratchy159.services.UserService;
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.stereotype.Controller;
-        import org.springframework.ui.Model;
-        import org.springframework.web.bind.annotation.GetMapping;
-        import org.springframework.web.bind.annotation.PathVariable;
-        import org.springframework.web.bind.annotation.PostMapping;
+import com.gmail.itchyscratchy159.entities.User;
+import com.gmail.itchyscratchy159.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
-        import java.util.Map;
+import java.util.Map;
 
 @Controller
 public class RegistrationController {
@@ -24,12 +24,10 @@ public class RegistrationController {
 
     @PostMapping("/registration")
     public String addUser(User user, Map<String, Object> model) {
-
         if (!userService.addUSer(user)) {
             model.put("message", "User exists!");
             return "/registration";
         }
-
         return "redirect:/login";
     }
 
@@ -42,7 +40,6 @@ public class RegistrationController {
         } else {
             model.addAttribute("message", "Activation code is not found!");
         }
-
         return "login";
     }
 }

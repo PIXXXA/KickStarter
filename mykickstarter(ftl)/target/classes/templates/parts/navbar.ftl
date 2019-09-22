@@ -27,6 +27,10 @@
         </ul>
 
         <div class="navbar-text mr-3"> ${name} </div>
-        <@l.logout/>
+        <#if name!="unknown">
+            <@l.logout/>
+        <#else>
+            <a href="/login" class="btn btn-primary">Registation</a>
+        </#if>
     </div>
 </nav>
