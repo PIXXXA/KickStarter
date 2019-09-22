@@ -9,7 +9,7 @@
 
     <div class="collapse" id="collapseExample">
         <div class="form-group mt-3">
-            <form action="/startup" method="get">
+            <form action="/startup" method="post">
                 <div class="form-group">
                     <div class="custom-file">
                         <input type="text" name="name" placeholder="Enter name of company">

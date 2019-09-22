@@ -17,8 +17,6 @@ public class Company {
 
     private Integer coast;
 
-
-
     public Company() {
     }
 

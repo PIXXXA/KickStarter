@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="CrowdFunding@localhost" uuid="693c741f-e9fe-4380-9621-4181a9d64341">
+    <data-source name="KickStarter@localhost" uuid="7e5f3c18-6195-45be-9afb-632ce26c51eb">
       <database-info product="PostgreSQL" version="11.5" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="11.5" exact-driver-version="42.2">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>

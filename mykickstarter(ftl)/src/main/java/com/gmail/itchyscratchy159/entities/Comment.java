@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     private String text;
 
@@ -16,18 +16,17 @@ public class Comment {
     @JoinColumn(name = "user_id")
     private User author;
 
-    public String getAuthorName(){
-        return author!=null ? author.getUsername():  "<none>" ;
+    public String getAuthorName() {
+        return author != null ? author.getUsername() : "<none>";
     }
 
     public Comment() {
     }
 
-    public Comment(String text , User user) {
+    public Comment(String text, User user) {
         this.author = user;
         this.text = text;
     }
-
 
     public String getFilename() {
         return filename;
@@ -36,15 +35,20 @@ public class Comment {
     public void setFilename(String filename) {
         this.filename = filename;
     }
-    public User getAuthor() { return author; }
 
-    public void setAuthor(User author) { this.author = author; }
+    public User getAuthor() {
+        return author;
+    }
 
-    public Integer getId() {
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

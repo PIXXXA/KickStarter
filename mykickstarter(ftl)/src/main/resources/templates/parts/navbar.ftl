@@ -20,9 +20,9 @@
                 <a class="nav-link" href="/startup">Company </a>
             </li>
             <#if  isAdmin>
-            <li class="nav-item">
-                <a class="nav-link" href="/user">User List </a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user">User List </a>
+                </li>
             </#if>
         </ul>
 

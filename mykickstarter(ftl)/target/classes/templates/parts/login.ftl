@@ -15,10 +15,20 @@
                    name="password"/>
         </div>
 
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
+        <#if isRegisterForm>
+            <div class="form-group">
+                <label for="exampleInputEmail1"> Email: </label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="some@some.com"
+                       name="email"/>
+            </div>
+        </#if>
+
+        <#if !isRegisterForm>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+        </#if>
 
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
 

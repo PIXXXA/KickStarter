@@ -8,12 +8,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Map;
 import java.util.UUID;
 
 @Controller
@@ -25,7 +26,7 @@ public class CommentController {
     private String uploadPath;
 
     @GetMapping("/home")
-    public String main(@RequestParam(required = false , defaultValue = "") String filter , Model model) {
+    public String main(@RequestParam(required = false, defaultValue = "") String filter, Model model) {
         Iterable<Comment> comments = commentRepository.findAll();
 
         if (filter != null && !filter.isEmpty()) {
@@ -34,7 +35,7 @@ public class CommentController {
             comments = commentRepository.findAll();
         }
         model.addAttribute("comments", comments);
-        model.addAttribute("filter" , filter);
+        model.addAttribute("filter", filter);
         return "home";
     }
 
@@ -43,21 +44,21 @@ public class CommentController {
             @AuthenticationPrincipal User user,
             @RequestParam("file") MultipartFile file,
             @RequestParam String text, Model model) throws IOException {
-        Comment comment = new Comment(text , user);
+        Comment comment = new Comment(text, user);
 
 
-        if (file!=null && !file.getOriginalFilename().isEmpty()){
-            File uploadDir= new File(uploadPath);
+        if (file != null && !file.getOriginalFilename().isEmpty()) {
+            File uploadDir = new File(uploadPath);
 
-            if (!uploadDir.exists()){
+            if (!uploadDir.exists()) {
                 uploadDir.mkdir();
             }
 
             String uuidFile = UUID.randomUUID().toString();
 
-            String resultFilename  = uuidFile + "." + file.getOriginalFilename();
+            String resultFilename = uuidFile + "." + file.getOriginalFilename();
 
-            file.transferTo(new File(uploadPath+"/"+resultFilename) );
+            file.transferTo(new File(uploadPath + "/" + resultFilename));
 
             comment.setFilename(resultFilename);
         }
