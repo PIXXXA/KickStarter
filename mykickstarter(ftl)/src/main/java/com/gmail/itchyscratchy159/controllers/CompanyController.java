@@ -23,9 +23,7 @@ public class CompanyController {
     private CompanyRepository companyRepository;
 
     @GetMapping("/startup")
-    public String main(@RequestParam(required = false, defaultValue = "") String filter, Model model) {
-        companyService.findAll ( filter, model );
-
+    public String main() {
         return "startup";
     }
 
@@ -39,7 +37,6 @@ public class CompanyController {
             Model model) throws IOException {
 
         companyService.addCompany ( user, name, description, coast, file, model );
-
         return "startup";
     }
 }

@@ -18,9 +18,6 @@ public class CommentService {
     @Autowired
     CommentRepository commentRepository;
 
-    @Value("${upload.path}")
-    private String uploadPath;
-
     public Iterable<Comment> findAll(String filter, Model model) {
         Iterable<Comment> comments;
         if ( filter != null && ! filter.isEmpty ( ) ) {
@@ -33,22 +30,4 @@ public class CommentService {
         return commentRepository.findAll ( );
     }
 
-    public void saveComment(User user, String text, MultipartFile file, Model model) throws IOException {
-        Comment comment = new Comment ( text, user );
-
-        if ( file != null && ! file.getOriginalFilename ( ).isEmpty ( ) ) {
-            File uploadDir = new File ( uploadPath );
-            if ( ! uploadDir.exists ( ) ) {
-                uploadDir.mkdir ( );
-            }
-            String uuidFile = UUID.randomUUID ( ).toString ( );
-            String resultFilename = uuidFile + "." + file.getOriginalFilename ( );
-            file.transferTo ( new File ( uploadPath + "/" + resultFilename ) );
-            comment.setFilename ( resultFilename );
-        }
-
-        commentRepository.save ( comment );
-        Iterable<Comment> comments = commentRepository.findAll ( );
-        model.addAttribute ( "comments", comments );
-    }
 }

@@ -1,16 +1,6 @@
 <#import "parts/common.ftl" as c>
 
 <@c.page>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <form method="get" action="/home" class="form-inline">
-                <input type="text" name="filter" class="form-control" placeholder="Search on comments"
-                       value="${filter?ifExists}">
-                <button type="submit" class="btn btn-primary ml-3">Submit</button>
-            </form>
-        </div>
-    </div>
-
     <div class="form-group mt-3">
         <form action="/startup" method="post" enctype="multipart/form-data">
             <input type="hidden" name="_csrf" value="${_csrf.token}"/>

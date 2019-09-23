@@ -16,6 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Autowired
     private UserService userService;
 
@@ -31,15 +32,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests ( )
-                .antMatchers ( "/", "/registration", "/static/**", "/activate/*" ).permitAll ( )
-                .anyRequest ( ).authenticated ( )
+                    .antMatchers ( "/", "/registration", "/static/**", "/activate/*" ).permitAll ( )
+                    .anyRequest ( ).authenticated ( )
                 .and ( )
-                .formLogin ( )
-                .loginPage ( "/login" )
-                .permitAll ( )
+                    .formLogin ( )
+                    .loginPage ( "/login" )
+                    .permitAll ( )
                 .and ( )
-                .logout ( )
-                .permitAll ( );
+                    .logout ( )
+                    .permitAll ( );
     }
 
     @Override

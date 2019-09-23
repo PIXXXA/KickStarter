@@ -27,7 +27,12 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepository.findByUsername ( username );
+        User user= userRepository.findByUsername ( username );
+
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found");
+        }
+        return user;
     }
 
     public boolean addUSer(User user) {
@@ -93,11 +98,12 @@ public class UserService implements UserDetailsService {
     public void updateProfile(User user, String password, String email) {
         String userEmail = user.getEmail ( );
 
-        boolean isEmailChenged = (email != null && ! email.equals ( userEmail )) ||
+        boolean isEmailChanged = (email != null && ! email.equals ( userEmail )) ||
                 (userEmail != null && userEmail.equals ( email ));
 
-        if ( isEmailChenged ) {
+        if ( isEmailChanged ) {
             user.setEmail ( email );
+
             if ( StringUtils.isEmpty ( email ) ) {
                 user.setActivationCode ( UUID.randomUUID ( ).toString ( ) );
             }
@@ -107,7 +113,8 @@ public class UserService implements UserDetailsService {
             user.setPassword ( password );
         }
         userRepository.save ( user );
-        if(isEmailChenged) {
+
+        if(isEmailChanged) {
             sendMessage ( user );
         }
     }

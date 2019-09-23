@@ -39,7 +39,4 @@ public class CompanyService {
         Iterable<Company> companies = companyRepository.findByDescription ( description );
         model.addAttribute ( "companies", companies );
     }
-
-    public void findAll(String filter, Model model) {
-    }
 }
