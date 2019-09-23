@@ -31,7 +31,15 @@
             </#if>
         </ul>
 
-        <div class="navbar-text mr-3"> ${name} </div>
+        <#--class="spinner-border" role="status"-->
+
+        <div class="navbar-text mr-3">
+            <div class="badge badge-primary ">
+                <div class="w-100 p-2" style="color: #000000;">
+                    ${name}
+                </div>
+            </div>
+        </div>
         <#if name!="unknown">
             <@l.logout/>
         <#else>
