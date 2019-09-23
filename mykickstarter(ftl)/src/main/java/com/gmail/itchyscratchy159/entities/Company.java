@@ -1,9 +1,6 @@
 package com.gmail.itchyscratchy159.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Company {
@@ -17,13 +14,40 @@ public class Company {
 
     private Integer coast;
 
+    private String filename;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User author;
+
     public Company() {
     }
 
-    public Company(String name, String description, int coast) {
+    public Company(String name, String description, Integer coast, User user) {
         this.name = name;
         this.description = description;
         this.coast = coast;
+        this.author = user;
+    }
+
+    public String getAuthorName() {
+        return author != null ? author.getUsername ( ) : "<none>";
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
     public Long getId() {
@@ -32,10 +56,6 @@ public class Company {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public void setCoast(Integer coast) {
-        this.coast = coast;
     }
 
     public String getName() {
@@ -56,6 +76,10 @@ public class Company {
 
     public int getCoast() {
         return coast;
+    }
+
+    public void setCoast(Integer coast) {
+        this.coast = coast;
     }
 
     public void setCoast(int coast) {

@@ -15,13 +15,13 @@ public class MailSenderService {
     private String username;
 
     public void send(String emailTo, String subject, String message) {
-        SimpleMailMessage mailMessage = new SimpleMailMessage();
+        SimpleMailMessage mailMessage = new SimpleMailMessage ( );
 
-        mailMessage.setFrom("");
-        mailMessage.setTo(emailTo);
-        mailMessage.setSubject(subject);
-        mailMessage.setText(message);
+        mailMessage.setFrom ( username );
+        mailMessage.setTo ( emailTo );
+        mailMessage.setSubject ( subject );
+        mailMessage.setText ( message );
 
-        mailSender.send(mailMessage);
+        mailSender.send ( mailMessage );
     }
 }

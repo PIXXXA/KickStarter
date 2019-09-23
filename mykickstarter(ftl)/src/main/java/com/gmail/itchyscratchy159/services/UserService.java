@@ -22,61 +22,88 @@ public class UserService implements UserDetailsService {
     private MailSenderService mailSender;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException { return userRepository.findByUsername(username); }
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return userRepository.findByUsername ( username );
+    }
 
     public boolean addUSer(User user) {
-        User userFromDB = userRepository.findByUsername(user.getUsername());
+        User userFromDB = userRepository.findByUsername ( user.getUsername ( ) );
 
-        if (userFromDB != null) {
+        if ( userFromDB != null ) {
             return false;
         }
-        user.setActive(true);
-        user.setRoles(Collections.singleton(Role.USER));
-        user.setActivationCode(UUID.randomUUID().toString());
+        user.setActive ( true );
+        user.setRoles ( Collections.singleton ( Role.USER ) );
+        user.setActivationCode ( UUID.randomUUID ( ).toString ( ) );
+        userRepository.save ( user );
 
-        userRepository.save(user);
-
-        if (!StringUtils.isEmpty(user.getEmail())) {
-            String message = String.format(
-                    "Hello, %s! \n" +
-                            "Welcome to KickStarter.Please, visit next link: http://localhost:8080/activate/%s",
-                    user.getUsername(),
-                    user.getActivationCode()
-            );
-            mailSender.send(user.getEmail(), "Activation code: ", message);
-        }
+        sendMessage ( user );
         return true;
     }
 
-    public boolean activateUser(String code) {
-        User user = userRepository.findByActivationCode(code);
+    private void sendMessage(User user) {
+        if ( ! StringUtils.isEmpty ( user.getEmail ( ) ) ) {
+            String message = String.format (
+                    "Hello, %s! \n" +
+                            "Welcome to KickStarter.Please, visit next link: http://localhost:8080/activate/%s",
+                    user.getUsername ( ),
+                    user.getActivationCode ( )
+            );
+            mailSender.send ( user.getEmail ( ), "Activation code: ", message );
+        }
+    }
 
-        if (user == null) {
+    public boolean activateUser(String code) {
+        User user = userRepository.findByActivationCode ( code );
+
+        if ( user == null ) {
             return false;
         }
-        user.setActivationCode(null);
-        userRepository.save(user);
+        user.setActivationCode ( null );
+        userRepository.save ( user );
         return true;
     }
 
     public List<User> findAll() {
-        return userRepository.findAll();
+        return userRepository.findAll ( );
     }
 
     public void saveUser(User user, String username, Map<String, String> form) {
-        user.setUsername(username);
+        user.setUsername ( username );
 
-        Set<String> roles = Arrays.stream(Role.values())
-                .map(Role::name)
-                .collect(Collectors.toSet());
+        Set<String> roles = Arrays.stream ( Role.values ( ) )
+                .map ( Role::name )
+                .collect ( Collectors.toSet ( ) );
 
-        user.getRoles().clear();
+        user.getRoles ( ).clear ( );
 
-        for (String key : form.keySet()) {
-            if (roles.contains(key)) {
-                user.getRoles().add(Role.valueOf(key));
+        for (String key : form.keySet ( )) {
+            if ( roles.contains ( key ) ) {
+                user.getRoles ( ).add ( Role.valueOf ( key ) );
             }
         }
-        userRepository.save(user);
+        userRepository.save ( user );
+    }
+
+    public void updateProfile(User user, String password, String email) {
+        String userEmail = user.getEmail ( );
+
+        boolean isEmailChenged = (email != null && ! email.equals ( userEmail )) ||
+                (userEmail != null && userEmail.equals ( email ));
+
+        if ( isEmailChenged ) {
+            user.setEmail ( email );
+            if ( StringUtils.isEmpty ( email ) ) {
+                user.setActivationCode ( UUID.randomUUID ( ).toString ( ) );
+            }
+
+        }
+        if ( ! StringUtils.isEmpty ( password ) ) {
+            user.setPassword ( password );
+        }
+        userRepository.save ( user );
+        if(isEmailChenged) {
+            sendMessage ( user );
+        }
     }
 }

@@ -1,8 +1,19 @@
 <#import "parts/common.ftl" as c>
 
 <@c.page>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <form method="get" action="/home" class="form-inline">
+                <input type="text" name="filter" class="form-control" placeholder="Search on comments"
+                       value="${filter?ifExists}">
+                <button type="submit" class="btn btn-primary ml-3">Submit</button>
+            </form>
+        </div>
+    </div>
+
     <div class="form-group mt-3">
-        <form action="/startup" method="post">
+        <form action="/startup" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="_csrf" value="${_csrf.token}"/>
 
             <div class="form-group">
                 <input type="text" name="name" class="form-control" placeholder="Enter name of company">
@@ -24,10 +35,26 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Send</button>
+                <button type="submit" class="btn btn-primary">Create</button>
             </div>
-
         </form>
     </div>
-<#--<p> ${company.getName()}</p>-->
+
+    <div class="card-columns">
+        <#list companies as company>
+            <div class="card my-3" style="width: 18rem;">
+                <#if company.filename??>
+                    <img src="/img/${company.filename}" class="card-img-top">
+                </#if>
+                <div class="m-2">
+                    <span>${company.getAuthorName()} </span>
+                    <span>${company.getName()} </span>
+                    <span>${company.getDescription()}</span>
+                    <span>${company.getCoast()}</span>
+                </div>
+            </div>
+        <#else >
+            No company
+        </#list>
+    </div>
 </@c.page>

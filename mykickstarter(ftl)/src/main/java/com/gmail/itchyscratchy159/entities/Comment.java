@@ -16,16 +16,16 @@ public class Comment {
     @JoinColumn(name = "user_id")
     private User author;
 
-    public String getAuthorName() {
-        return author != null ? author.getUsername() : "<none>";
-    }
-
     public Comment() {
     }
 
     public Comment(String text, User user) {
         this.author = user;
         this.text = text;
+    }
+
+    public String getAuthorName() {
+        return author != null ? author.getUsername ( ) : "<none>";
     }
 
     public String getFilename() {

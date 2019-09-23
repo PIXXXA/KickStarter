@@ -6,7 +6,7 @@
             <label for="exampleInputEmail1"> User Name : </label>
             <input type="text" class="form-control" id="exampleInputName1" aria-describedby="emailHelp"
                    placeholder="Enter name" name="username"/>
-            </div>
+        </div>
 
         <div class="form-group">
             <label for="exampleInputPassword1"> Password: </label>
@@ -19,7 +19,8 @@
                 <label for="exampleInputEmail1"> Email: </label>
                 <input type="email" class="form-control" id="exampleInputEmail1" placeholder="some@some.com"
                        name="email"/>
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.
+                </small>
 
             </div>
         </#if>
